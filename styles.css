@@ -1,0 +1,574 @@
+:root {
+  --primary-color: #480ca8;
+  --secondary-color: #ffffff; 
+  --dark-color: #000000;
+  --light-color: #121212; 
+  --text-color: #ffffff; 
+}
+
+@font-face {
+  font-family: 'CustomFont1';
+  src: url('chronos_assets/fonts/Goldman/Goldman-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CustomFont2';
+  src: url('chronos_assets/fonts/Goldman/Goldman-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CustomFont3';
+  src: url('chronos_assets/fonts/Space_Grotesk/SpaceGrotesk-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+
+  /* background: linear-gradient(to right, #0f0c29, #302b63, #24243e); */
+  background-image: url();
+  background: #040219;          
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+ 
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  /* background-color: black;
+  background-color: #000000; */
+  background-size: cover;
+  background-position: center;
+  overflow-x: hidden; 
+  background-attachment: fixed; 
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: white;
+  position: relative;
+}
+
+/* Logo Styling */
+.logo {
+  display: flex;
+  align-items: center; /* Centers the logo and text vertically */
+  gap: 10px; /* Space between the logo and text */
+  font-size: 24px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #ff007f, #ff00ff);
+  -webkit-background-clip: text; /* Makes the gradient visible only on the text */
+  -webkit-text-fill-color: transparent; /* Fills the text with the gradient */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  position: relative;
+}
+
+/* Add the hover glow effect */
+.logo:hover {
+  text-shadow: 0 0 10px #ff6a00, 0 0 20px #ff6a00, 0 0 30px #ee0979, 0 0 40px #ee0979; /* Glowing effect */
+  transform: scale(1.1); /* Slight scaling for emphasis */
+}
+
+/* Brand Logo Container */
+.brand-logo-container {
+  width: 100px; /* Set the desired size of the logo */
+  height: auto;
+  display: flex;
+  align-items: center; /* Centers the image within the container */
+  justify-content: center;
+  background-color: transparent; /* Optional: Background for logo container */
+  overflow: hidden; /* Ensures the image fits within the circle */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  box-shadow: 0 0 0 rgba(255, 165, 0, 0); /* Initial shadow for the glow effect */
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+/* Glow effect on hover for the logo container */
+.brand-logo-container:hover {
+  text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 30px #ff007f, 0 0 20px #ff007f; /* Glowing effect */
+  /* transform: scale(1.1); Slight scaling for emphasis */
+}
+
+/* Brand Logo */
+.brand-logo-img {
+  width: 100%; /* Ensures the logo fills the container */
+  height: 100%;
+  object-fit: cover; /* Keeps the aspect ratio of the logo */
+}
+
+.top-right-logo {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+}
+
+.top-right-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  top: 40px;
+  z-index: 10; /* Ensure the navbar is above other elements */
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Vertically centers items */
+  list-style: none;
+  padding: 10px 20px;
+  margin: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 50px; /* Creates an ovular shape for the navbar */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px 20px; /* Adjust padding for vertical alignment */
+  height: 100%; /* Ensures it spans the full height of the navbar */
+  display: flex; /* Enables centering */
+  align-items: center; /* Vertically centers the text */
+  justify-content: center; /* Horizontally centers the text */
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border-radius: 20px; /* Adds a subtle oval effect to each link */
+}
+
+.nav-links a::before {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(90deg, #ff007f, #ff00ff);
+  z-index: -1;
+  border-radius: 20px; /* Matches the link shape during hover */
+  transition: all 0.4s ease-in-out;
+}
+
+.nav-links a:hover::before {
+  width: 100%; /* Expands gradient effect fully */
+}
+
+.nav-links a:hover {
+  color: #fff;
+  transform: scale(1.2); /* Smooth scale effect */
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #ff6a00;
+  border-radius: 50px; /* Ovular underline */
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%; /* Fully underline */
+  left: 0;
+}
+
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.menu-icon .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none; /* Initially hide the navbar links */
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    padding: 10px 20px;
+  }
+
+  .nav-links.active {
+    display: flex; /* Show links when menu is active */
+  }
+}
+
+
+.container {
+  margin-top: 60px;
+  padding-left: 150px;
+}
+
+h1 {
+  font-size: 48px;
+  color: #ff00ff;
+}
+
+.register-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #ff00ff;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.static-image {
+  position: absolute; /* Changed to absolute positioning */
+  bottom: 0; /* Position it at the bottom */
+  right: 0; /* Position it at the extreme right */
+  display: block;
+  margin: 0; /* Remove any existing margins */
+  width: 250px; /* Adjust the width as needed */
+  max-width: 100%;
+}
+
+
+
+h1 {
+  font-family: 'CustomFont2', sans-serif;
+  font-size: 80px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(120deg, #941270, #e009bb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+.description {
+  font-family: 'CustomFont3', sans-serif;
+  font-size: 25px;
+  line-height: 1.25;
+  color: #D4C6D3;
+  max-width: 600px;
+  padding-bottom: 10px;
+}
+
+.prize, .date {
+  font-family: 'CustomFont3', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  color: #cfa9c3;
+}
+
+.register-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, #ff007f, #ff00ff);
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 20px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  position: relative;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 0 10px rgba(255, 0, 255, 0.6);
+  margin-top: 100px;
+}
+
+.register-btn .arrow {
+  margin-left: 10px;
+  background: white;
+  color: #ff00ff;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: bold;
+  transition: 0.3s ease-in-out;
+}
+
+.register-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.8);
+}
+
+.register-btn:hover .arrow {
+  background: #ff00ff;
+  color: white;
+}
+
+
+.vertical-text {
+  position: absolute;
+  left: 20px; /* Adjust as needed */
+  top: 50%;
+  transform: rotate(-90deg) translateY(50%) translateX(-50%) ;
+  transform-origin: left center;
+  font-family: 'CustomFont2', sans-serif;
+  font-size: 54px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(120deg, #ff007f, #ff00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f, 0 0 10px #ff00ff; */
+
+}
+
+
+/*---------------------------------------- Leads---------------------------------------- */
+.heading {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* Grid Layout */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  max-width: 600px;
+  margin: auto;
+}
+
+/* Card Styles */
+.card {
+  background-color: #1e1e2a;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  width: 180px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Circular Profile Image */
+.profile-pic {
+  width: 60px;
+  height: 60px;
+  background-color: #d3d3d3;
+  border-radius: 50%;
+}
+
+/* Name & Designation */
+.name {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.designation {
+  font-size: 12px;
+  color: #bdbdbd;
+}
+
+/* Social Media Icons */
+.social-icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.icon {
+  width: 15px;
+  height: 15px;
+  background-color: #d3d3d3;
+  border-radius: 50%;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .grid-container {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Footer Section */
+.footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding-top: 140px;
+  margin-top: 140px; /* Ensures it starts after the image */
+  position: relative;
+  clear: both;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-section {
+  flex: 1;
+  padding: 20px;
+  min-width: 250px;
+}
+
+.footer-logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #4aa3f0;
+}
+
+.footer-title {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #e3e3e3;
+}
+
+.footer-text {
+  font-size: 14px;
+  color: #b5b5b5;
+  line-height: 1.6;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: #b5b5b5;
+  font-size: 14px;
+  margin-bottom: 10px;
+  display: block;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer-link:hover {
+  color: #4aa3f0;
+  transform: translateX(3px);
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.footer-social-icon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: all 0.3s ease-in-out;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.footer-social-icon i {
+  font-size: 18px;
+}
+
+.footer-social-icon:hover {
+  background: #4aa3f0;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  background: linear-gradient(120deg, #ff007f, #ff00ff);
+  text-align: center;
+  padding: 15px 0;
+  padding-top: 140px;
+  font-size: 12px;
+  color: #fff;
+  margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .footer-section {
+    max-width: 500px;
+  }
+  
+  .social-icons {
+    flex-direction: row;
+  }
+}

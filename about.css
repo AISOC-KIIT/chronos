@@ -1,0 +1,85 @@
+body {
+    background-color:  #040219;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+@font-face {
+    font-family: 'CustomFont1';
+    src: url('chronos_assets/fonts/Goldman/Goldman-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'CustomFont2';
+    src: url('chronos_assets/fonts/Goldman/Goldman-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'CustomFont3';
+    src: url('chronos_assets/fonts/Space_Grotesk/SpaceGrotesk-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+.logo-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+
+}
+
+.logo-container:hover {
+    transform: scale(1.1); /* Slight scaling for emphasis */
+  }
+
+.logo-container img {
+    max-width: 100px;
+    border-radius: 8px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 80px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+h1 {
+    font-family: 'CustomFont1', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #b37df8;
+    text-shadow: 0 0 10px rgba(179, 125, 248, 0.8);
+}
+
+h2 {
+    font-family: 'CustomFont1', sans-serif;
+
+    font-size: 22px;
+    color: #ffcc00;
+    margin-top: 20px;
+}
+
+ul {
+    font-family: 'CustomFont1', sans-serif;
+
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    font-family: 'CustomFont1', sans-serif;
+
+    font-size: 16px;
+    margin: 10px 0;
+}
