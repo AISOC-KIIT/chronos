@@ -457,7 +457,7 @@ h1 {
   color: #fff;
   text-align: center;
   padding-top: 140px;
-  margin-top: 140px; /* Ensures it starts after the image */
+  margin-top: 160px; /* Ensures it starts after the image */
   position: relative;
   clear: both;
 }
